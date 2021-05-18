@@ -1,0 +1,53 @@
+<div class="card-container">
+  <button mat-raised-button style="margin-bottom: 20px;margin-right: 40px;margin-top: 20px"
+          (click)="generateParams()">Сгенерировать параметры</button>
+  <button mat-raised-button style="margin-bottom: 20px;"
+          (click)="setParams()">Задать параметры</button>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>P  </mat-label>
+    <input matInput value="{{P}}" class="input-container" (change)="changeP($event)">
+  </mat-form-field>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>A  </mat-label>
+    <input [readonly]="true" matInput value="{{A}}" class="input-container">
+  </mat-form-field>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>X  </mat-label>
+    <input [readonly]="true" matInput value="{{X}}" class="input-container">
+  </mat-form-field>
+  <br>
+  <mat-form-field readonly="true" style="width: 80%">
+    <mat-label>Y  </mat-label>
+    <input [readonly]="true" matInput value="{{Y}}" class="input-container">
+  </mat-form-field>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>Сообщение  </mat-label>
+    <br>
+    <input matInput value="{{message}}" class="input-container"
+           (change)="changeMessage($event)">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button style="margin-bottom: 20px"
+          (click)="encrypt()">Зашифровать</button>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>Зашифрованное сообщение  </mat-label>
+    <input [readonly]="true" matInput value="{{encryptedMessage}}" class="input-container">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button style="margin-bottom: 20px"
+          (click)="decrypt()">Дешифровать</button>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>Дешифрованное сообщение  </mat-label>
+    <input [readonly]="true" matInput value="{{decryptedMessage}}" class="input-container">
+  </mat-form-field>
+  <br>
+  <div *ngIf="parameters && parameters.error" style="color: darkred">
+    {{parameters.errorMessage}}
+  </div>
+</div>
