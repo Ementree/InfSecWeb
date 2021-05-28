@@ -1,0 +1,9 @@
+.card-container{
+  width: 60%;
+  height: 760px;
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 15px;
+  margin-left: 200px;
+  background-color: #f1f3f4;
+}

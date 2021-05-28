@@ -1,0 +1,60 @@
+<div class="card-container" xmlns="http://www.w3.org/1999/html">
+  <button mat-raised-button style="margin-bottom: 20px;margin-right: 40px;margin-top: 20px"
+          (click)="generateParams()">Сгенерировать параметры</button>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>P  </mat-label>
+    <input [readonly]="true" matInput value="{{P}}" class="input-container">
+  </mat-form-field>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>Q  </mat-label>
+    <input [readonly]="true" matInput value="{{Q}}" class="input-container">
+  </mat-form-field>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>Y  </mat-label>
+    <input [readonly]="true" matInput value="{{Y}}" class="input-container">
+  </mat-form-field>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>G  </mat-label>
+    <input [readonly]="true" matInput value="{{G}}" class="input-container">
+  </mat-form-field>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>X  </mat-label>
+    <input [readonly]="true" matInput value="{{X}}" class="input-container">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field style="width: 80%">
+    <mat-label>Сообщение  </mat-label>
+    <input matInput value="{{message}}" class="input-container" (change)="changeMessage($event)">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button style="margin-bottom: 20px"
+          (click)="sign()">Подписать</button>
+
+  <button mat-raised-button style="margin-bottom: 20px; margin-left: 40px"
+          (click)="checkSign()">Проверить</button>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>R  </mat-label>
+    <input [readonly]="true" matInput value="{{R}}" class="input-container">
+  </mat-form-field>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>S  </mat-label>
+    <input [readonly]="true" matInput value="{{S}}" class="input-container">
+  </mat-form-field>
+  <br>
+  <mat-form-field style="width: 80%">
+    <mat-label>Измененное сообщение  </mat-label>
+    <input matInput value="{{changed_message}}" class="input-container" (change)="changeMessageHash($event)">
+  </mat-form-field>
+  <br>
+
+  <span *ngIf="checked && isCheckTrue" style="color: darkgreen">Подпись действительна</span>
+  <span *ngIf="checked && !isCheckTrue" style="color: darkred">Подпись недействительна</span>
+</div>

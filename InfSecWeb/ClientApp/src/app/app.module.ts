@@ -12,6 +12,7 @@ import { AngularMaterialModule } from './material.module';
 import { RsaComponent } from './rsa/rsa.component';
 import { EncryptionComponent } from './encryption/encryption.component';
 import { ElGamalComponent } from './el-gamal/el-gamal.component';
+import { DsaComponent } from './dsa/dsa.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ElGamalComponent } from './el-gamal/el-gamal.component';
     HomeComponent,
     RsaComponent,
     EncryptionComponent,
-    ElGamalComponent
+    ElGamalComponent,
+    DsaComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,6 +34,7 @@ import { ElGamalComponent } from './el-gamal/el-gamal.component';
       { path: 'rsa', component: RsaComponent },
       { path: 'encryption', component: EncryptionComponent },
       { path: 'elgamal', component: ElGamalComponent },
+      { path: 'dsa', component: DsaComponent },
     ]),
     NoopAnimationsModule
   ],

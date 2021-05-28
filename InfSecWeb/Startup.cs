@@ -1,3 +1,4 @@
+using InfSecWeb.DSA.Services;
 using InfSecWeb.ElGamal.Services;
 using InfSecWeb.Services;
 using Microsoft.AspNetCore.Builder;
@@ -30,6 +31,9 @@ namespace InfSecWeb
             services.AddScoped<RsaEncrypter>();
             services.AddScoped<ElGamalParametersGenerator>();
             services.AddScoped<ElGamalEncrypter>();
+            services.AddScoped<DsaGenerator>();
+            services.AddScoped<DsaEncrypter>();
+            services.AddScoped<StringFormatter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

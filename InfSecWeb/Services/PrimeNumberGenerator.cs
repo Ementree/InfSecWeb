@@ -11,7 +11,7 @@ namespace InfSecWeb.Services
             var primeNumbers = new List<ulong>();
             for (ulong i = 2; i <= max; i++)
             {
-                if (isSimple(i))
+                if (IsPrime(i))
                 {
                     primeNumbers.Add(i);
                 }
@@ -20,14 +20,17 @@ namespace InfSecWeb.Services
             var index = rnd.Next(0, primeNumbers.Count - 1);
             return primeNumbers[index];
         }
-        
-        private bool isSimple(BigInteger num)
+
+        public bool IsPrime(BigInteger bigInteger)
         {
-            for (int i = 2; i < (num / 2); i++)
+            var upper = BigInteger.Divide(bigInteger, 2) + 1;
+            for (BigInteger i = 2; i < upper; i++)
             {
-                if (num % i == 0)
+                BigInteger.DivRem(bigInteger, i, out var r);
+                if (r == BigInteger.Zero)
                     return false;
             }
+
             return true;
         }
     }
